@@ -13,42 +13,42 @@ Template Name: home
   </head>
   <body>
     <?php the_post(); ?>
-    <div main="home">
-      <section panel="about">
-        <div ribon="wrapper">
-          <a ribon="content" href="http://yahoo.co.jp">
+    <div id="home" class="main">
+      <section class="section section--about" data-js="sectionAbout">
+        <div class="ribon__wrapper">
+          <a class="ribon__content" href="http://yahoo.co.jp">
             <span>企業様はこちら</span>
           </a>
         </div>
-        <div block="yellow"></div>
-        <div block="pink"></div>
-        <div block="blue"></div>
-        <div block="green"></div>
-        <div utility="table">
-          <div utility="table-cell">
+        <div class="block block--yellow"></div>
+        <div class="block block--pink"></div>
+        <div class="block block--blue"></div>
+        <div class="block block--green"></div>
+        <div class="table">
+          <div class="table-cell">
             <div class="container">
-              <div parts="title">
-                <div parts="theme">
+              <div class="title">
+                <div class="theme">
                   <?php the_title(); ?>
                 </div>
-                <div parts="logo">
-                  UNITUS<span dot>.</span>
+                <div class="logo">
+                  UNITUS<span class="dot">.</span>
                 </div>
               </div>
-              <div box="comment">
+              <div class="comment" data-js="comment">
                 <h1>新着情報</h1>
                 新着情報はありません。
               </div>
-              <div parts="content">
+              <div class="content" data-js="proverb">
                 <?php the_content(); ?>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div parts="wraparound">
-        <div utility="table">
-          <div utility="table-cell">
+      <div class="wraparound" data-js="wraparound">
+        <div class="table">
+          <div class="table-cell">
             <marquee behavior="scroll" direction="down" scrollamount="6" height="150">Unitus</marquee>
           </div>
         </div>
@@ -57,36 +57,36 @@ Template Name: home
     <script>
       $(function(){
 
-        var comment = $("[panel=about] blockquote").html();
-        $("[panel=about] blockquote").remove();
-        $("[box=comment]").html(comment);
+        var comment = $("[data-js=sectionAbout] blockquote").html();
+        $("[data-js=sectionAbout] blockquote").remove();
+        $("[data-js=comment]").html(comment);
         var count = 0;
         var state = "move";
         var isReset = false
         var proverb = [];
-        $("[panel=about] [parts=content] em").each(function(index){proverb.push($(this).text())}).parent().remove();
+        $("[data-js=proverb] em").each(function(index){proverb.push($(this).text())}).parent().remove();
         var timer_id = setInterval( function () {
-          if($("[parts=wraparound] .pointer div").position().top > -110 && state=="move" && isReset){
-            $("[parts=wraparound] .pointer").trigger("stop");
+          if($("[data-js=wraparound] .pointer div").position().top > -110 && state=="move" && isReset){
+            $("[data-js=wraparound] .pointer").trigger("stop");
             state="stop";
           }else if(state=="stop"){
             count+=1;
             if(count > 300){
               count = 0;
-              $("[parts=wraparound] .pointer").trigger("start");
+              $("[data-js=wraparound] .pointer").trigger("start");
               state="move"
               isReset = false;
             }
-          }else if($("[parts=wraparound] .pointer div").position().top < -110 && !isReset){
+          }else if($("[data-js=wraparound] .pointer div").position().top < -110 && !isReset){
             isReset = true;
-            $("[parts=wraparound] .pointer div").html(proverb[Math.floor((proverb.length * Math.random()))]);
+            $("[data-js=wraparound] .pointer div").html(proverb[Math.floor((proverb.length * Math.random()))]);
           }
         } , 10 );
       });
     </script>
     <script type="text/javascript">
       $(function () {
-          $("[parts=wraparound] marquee").marquee('pointer').mouseover(function () {
+          $("[data-js=wraparound] marquee").marquee('pointer').mouseover(function () {
               // $(this).trigger('stop');
           }).mouseout(function () {
               // $(this).trigger('start');
