@@ -11,14 +11,14 @@ section.section{
 /*====================
         about
 ====================*/
-section.section.section--about{
+section.section{
   background-color: whitesmoke;
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-section.section.section--about .logo{
+section.section .logo{
   position: relative;
   z-index: 5;
   font-weight: bold;
@@ -83,16 +83,21 @@ section.section.section--about .comment{
   display: inline-block;
   vertical-align: bottom;
 }
-section.section.section--about .content{
+section.section--about .content{
   margin-top: 24px;
+}
+section.section .content{
   position: relative;
   z-index: 5;
   font-weight: bold;
   font-family: monospace;
   color: #444;
 }
-section.section.section--about .content p{
+section.section .content p{
   text-shadow: 0px 0px 10px whitesmoke;
+}
+section.section .content p a{
+  text-shadow: none;
 }
 section.section.section--about  .comment {
     position: relative;
@@ -101,7 +106,7 @@ section.section.section--about  .comment {
     padding:16px ;
     text-align:left;
     background-color:#f5f5f5;
-    margin: 5px 5px 5px 10px;
+    margin: 5px 5px 5px 16px;
     border-radius: 5px ;
 }
 section.section.section--about  .comment h1{
@@ -135,14 +140,17 @@ section.section.section--about .comment:before {
     border-right: 12px solid #444; /*10px*/
     z-index: 1;
 }
-.block{
+/*====================
+        diamond
+====================*/
+.diamond{
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   position: absolute;
 }
-.block--pink{
+.diamond--pink{
   left: -5%;
   top: -20%;
   width: 255px;
@@ -150,7 +158,7 @@ section.section.section--about .comment:before {
   border: double 6px;
   border-color: rgb(230, 0, 108);
 }
-.block--yellow{
+.diamond--yellow{
   border: double 6px;
   border-color: rgb(231, 226, 0);
   left: 82%;
@@ -158,7 +166,7 @@ section.section.section--about .comment:before {
   height: 800px;
   bottom: 50%;
 }
-.block--blue{
+.diamond--blue{
   border: double 6px;
   border-color: rgb(0, 160, 197);
   top: 90%;
@@ -167,7 +175,46 @@ section.section.section--about .comment:before {
   right: 18%;
 }
 
-.block--green{
+.diamond--green{
+  width: 300px;
+  height: 300px;
+  border: double 6px;
+  border-color: rgb(0, 180, 0);
+  bottom: -40%;
+  left: 10%;
+}
+/*====================
+        square
+====================*/
+.square{
+  position: absolute;
+}
+.square--pink{
+  left: -5%;
+  top: -20%;
+  width: 255px;
+  height: 255px;
+  border: double 6px;
+  border-color: rgb(230, 0, 108);
+}
+.square--yellow{
+  border: double 6px;
+  border-color: rgb(231, 226, 0);
+  left: 82%;
+  width: 800px;
+  height: 800px;
+  bottom: 50%;
+}
+.square--blue{
+  border: double 6px;
+  border-color: rgb(0, 160, 197);
+  top: 90%;
+  width: 480px;
+  height: 480px;
+  right: 18%;
+}
+
+.square--green{
   width: 300px;
   height: 300px;
   border: double 6px;
@@ -250,14 +297,27 @@ section.section.section--about .comment:before {
   font-size: 14px;
   white-space: normal !important;
 }
+/*====================
+        group
+====================*/
+section.section.section--group .logo{
+  text-align: center;
+}
+section.section.section--group .logo .dot{
+  -moz-animation: dotAnime 20s ease 0s infinite alternate;
+  -webkit-animation: dotAnime 20s ease 0s infinite alternate;
+  -o-animation: dotAnime 20s ease 0s infinite alternate;
+  -ms-animation: dotAnime 20s ease 0s infinite alternate;
+}
+
 @media (max-width: 1200px){
-  section.section.section--about .logo{
+  section.section .logo{
     font-size: 120px;
     line-height: 88px;
   }
 }
 @media (max-width: 992px){
-  section.section.section--about .logo{
+  section.section .logo{
     font-size: 96px;
     line-height: 88px;
   }
@@ -269,7 +329,11 @@ section.section.section--about .comment:before {
   }
 }
 @media (max-width: 768px){
-  section.section.section--about .logo{
+  section.section.section .title {
+    width: 100%;
+    text-align: center;
+  }
+  section.section .logo{
     font-size: 72px;
     line-height: 88px;
   }
@@ -285,7 +349,7 @@ section.section.section--about .comment:before {
     width: 100%;
     border: solid 3px #454545;
   }
-  section.section.section--about .content{
+  section.section .content{
     margin: 4px;
     font-size: 12px;
   }

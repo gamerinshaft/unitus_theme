@@ -20,10 +20,10 @@ Template Name: home
             <span>企業様はこちら</span>
           </a>
         </div>
-        <div class="block block--yellow"></div>
-        <div class="block block--pink"></div>
-        <div class="block block--blue"></div>
-        <div class="block block--green"></div>
+        <div class="diamond diamond--yellow"></div>
+        <div class="diamond diamond--pink"></div>
+        <div class="diamond diamond--blue"></div>
+        <div class="diamond diamond--green"></div>
         <div class="table">
           <div class="table-cell">
             <div class="container">
@@ -53,6 +53,42 @@ Template Name: home
           </div>
         </div>
       </div>
+      <section class="section section--group">
+        <div class="table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="title">
+                    <div class="logo">
+                      Join<span class="dot">.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="content">
+                    <p>
+                      Unitusは学生エンジニアを統合する事を目的としたプログラミング連盟です。連盟に加盟してもらう事に寄って、それぞれの活動をより綿密なものにします。
+                      難しい手続き等は一切ありません。フォームから情報を送信して頂ければこちらからコンタクトをします。
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="pull-right">
+                            <a class="btn btn-primary" href="http://yahoo.co.jp">団体一覧をみてみる</a>
+                          </div>
+                        </div>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="square square--yellow"></div>
+        <div class="square square--pink"></div>
+        <div class="square square--blue"></div>
+        <div class="square square--green"></div>
+      </section>
     </div>
     <script>
       $(function(){
