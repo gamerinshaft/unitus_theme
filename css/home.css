@@ -112,11 +112,11 @@ section.section.section--about .comment:before {
         diamond
 ====================*/
 .diamond{
+  position: fixed;
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  position: absolute;
 }
 .diamond--pink{
   left: -5%;
@@ -288,6 +288,7 @@ section.section.section--about .comment:before {
         wraparound
 ====================*/
 .wraparound{
+  z-index: 5;
   position: relative;
   background-color: rgb(52, 52, 90);
   height: 120px;

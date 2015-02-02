@@ -89,7 +89,13 @@ Template Name: home
         <div class="square square--blue"></div>
         <div class="square square--green"></div>
       </section>
-      <h1>share</h1>
+      <div class="wraparound" data-js="wraparound">
+        <div class="table">
+          <div class="table-cell">
+            <marquee behavior="scroll" direction="down" scrollamount="6" height="150">Unitus</marquee>
+          </div>
+        </div>
+      </div>
       <section class="section section--hoge">
         <div class="table">
           <div class="table-cell">
@@ -129,6 +135,44 @@ Template Name: home
     </div>
     <script>
       $(function(){
+        $("#home").on("scroll",function(){
+          if($(this).scrollTop() == 0){
+            $(".square").animate(
+              {opacity: 0},
+              {
+                duration: 300,
+                complete: function(){
+                  $(this).css({
+                    position: "absolute",
+                    opacity: 1
+                  });
+                }
+              }
+            );
+            $(".circle").animate(
+              {opacity: 0},
+              {
+                duration: 300,
+                complete: function(){
+                  $(this).css({
+                    position: "absolute",
+                    opacity: 1
+                  });
+                }
+              }
+            );
+          }
+          if($(".section--group").position().top < 0){
+            $(".square").css({
+              position: 'fixed'
+            });
+          }
+          if($(".section--hoge").position().top < 5){
+            $(".circle").css({
+              position: 'fixed'
+            });
+          }
+        });
 
         var comment = $("[data-js=sectionAbout] blockquote").html();
         $("[data-js=sectionAbout] blockquote").remove();
