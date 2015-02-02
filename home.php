@@ -11,131 +11,129 @@ Template Name: home
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/animation.css">
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/lib/jquery.marquee.js"></script>
   </head>
-  <body>
+  <body id="home">
     <?php the_post(); ?>
-    <div id="home" class="main">
-      <section class="section section--about" data-js="sectionAbout">
-        <div class="ribon__wrapper">
-          <a class="ribon__content" href="http://yahoo.co.jp">
-            <span>企業様はこちら</span>
-          </a>
-        </div>
-        <div class="diamond diamond--yellow"></div>
-        <div class="diamond diamond--pink"></div>
-        <div class="diamond diamond--blue"></div>
-        <div class="diamond diamond--green"></div>
-        <div class="table">
-          <div class="table-cell">
-            <div class="container">
-              <div class="title">
-                <div class="theme">
-                  <?php the_title(); ?>
-                </div>
-                <div class="logo">
-                  UNITUS<span class="dot">.</span>
-                </div>
+    <section class="section section--about" data-js="sectionAbout">
+      <div class="ribon__wrapper">
+        <a class="ribon__content" href="http://yahoo.co.jp">
+          <span>企業様はこちら</span>
+        </a>
+      </div>
+      <div class="diamond diamond--yellow"></div>
+      <div class="diamond diamond--pink"></div>
+      <div class="diamond diamond--blue"></div>
+      <div class="diamond diamond--green"></div>
+      <div class="table">
+        <div class="table-cell">
+          <div class="container">
+            <div class="title">
+              <div class="theme">
+                <?php the_title(); ?>
               </div>
-              <div class="comment" data-js="comment">
-                <h1>新着情報</h1>
-                新着情報はありません。
-              </div>
-              <div class="content" data-js="proverb">
-                <?php the_content(); ?>
+              <div class="logo">
+                UNITUS<span class="dot">.</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <div class="wraparound" data-js="wraparound">
-        <div class="table">
-          <div class="table-cell">
-            <marquee behavior="scroll" direction="down" scrollamount="6" height="150">Unitus</marquee>
+            <div class="comment" data-js="comment">
+              <h1>新着情報</h1>
+              新着情報はありません。
+            </div>
+            <div class="content" data-js="proverb">
+              <?php the_content(); ?>
+            </div>
           </div>
         </div>
       </div>
-      <section class="section section--group">
-        <div class="table">
-          <div class="table-cell">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-5">
-                  <div class="title">
-                    <div class="logo">
-                      Join<span class="dot">.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div class="content">
-                    <p>
-                      Unitusは学生エンジニアを統合する事を目的としたプログラミング連盟です。連盟に加盟してもらう事に寄って、それぞれの活動をより綿密なものにします。
-                      難しい手続き等は一切ありません。フォームから情報を送信して頂ければこちらからコンタクトをします。
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <div class="pull-right">
-                            <a class="btn btn-primary" href="http://yahoo.co.jp">団体一覧をみてみる</a>
-                          </div>
-                        </div>
-                      </div>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="square square--yellow"></div>
-        <div class="square square--pink"></div>
-        <div class="square square--blue"></div>
-        <div class="square square--green"></div>
-      </section>
-      <div class="wraparound" data-js="wraparound">
-        <div class="table">
-          <div class="table-cell">
-            <marquee behavior="scroll" direction="down" scrollamount="6" height="150">Unitus</marquee>
-          </div>
+    </section>
+    <div class="wraparound" data-js="wraparound">
+      <div class="table">
+        <div class="table-cell">
+          <marquee behavior="scroll" direction="down" scrollamount="6" height="150">Unitus</marquee>
         </div>
       </div>
-      <section class="section section--hoge">
-        <div class="table">
-          <div class="table-cell">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-5">
-                  <div class="title">
-                    <div class="logo">
-                      Join<span class="dot">.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div class="content">
-                    <p>
-                      Unitusは学生エンジニアを統合する事を目的としたプログラミング連盟です。連盟に加盟してもらう事に寄って、それぞれの活動をより綿密なものにします。
-                      難しい手続き等は一切ありません。フォームから情報を送信して頂ければこちらからコンタクトをします。
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <div class="pull-right">
-                            <a class="btn btn-primary" href="http://yahoo.co.jp">団体一覧をみてみる</a>
-                          </div>
-                        </div>
-                      </div>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="circle circle--yellow"></div>
-        <div class="circle circle--pink"></div>
-        <div class="circle circle--blue"></div>
-        <div class="circle circle--green"></div>
-      </section>
     </div>
+    <section class="section section--group">
+      <div class="table">
+        <div class="table-cell">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="title">
+                  <div class="logo">
+                    Join<span class="dot">.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="content">
+                  <p>
+                    Unitusは学生エンジニアを統合する事を目的としたプログラミング連盟です。連盟に加盟してもらう事に寄って、それぞれの活動をより綿密なものにします。
+                    難しい手続き等は一切ありません。フォームから情報を送信して頂ければこちらからコンタクトをします。
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="pull-right">
+                          <a class="btn btn-primary" href="http://yahoo.co.jp">団体一覧をみてみる</a>
+                        </div>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="square square--yellow"></div>
+      <div class="square square--pink"></div>
+      <div class="square square--blue"></div>
+      <div class="square square--green"></div>
+    </section>
+    <div class="wraparound" data-js="wraparound">
+      <div class="table">
+        <div class="table-cell">
+          <marquee behavior="scroll" direction="down" scrollamount="6" height="150">Unitus</marquee>
+        </div>
+      </div>
+    </div>
+    <section class="section section--hoge">
+      <div class="table">
+        <div class="table-cell">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="title">
+                  <div class="logo">
+                    Join<span class="dot">.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="content">
+                  <p>
+                    Unitusは学生エンジニアを統合する事を目的としたプログラミング連盟です。連盟に加盟してもらう事に寄って、それぞれの活動をより綿密なものにします。
+                    難しい手続き等は一切ありません。フォームから情報を送信して頂ければこちらからコンタクトをします。
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="pull-right">
+                          <a class="btn btn-primary" href="http://yahoo.co.jp">団体一覧をみてみる</a>
+                        </div>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="circle circle--yellow"></div>
+      <div class="circle circle--pink"></div>
+      <div class="circle circle--blue"></div>
+      <div class="circle circle--green"></div>
+    </section>
     <script>
       $(function(){
-        $("#home").on("scroll",function(){
+        $(window).on("scroll",function(){
           if($(this).scrollTop() == 0){
             $(".square").animate(
               {opacity: 0},
@@ -162,12 +160,12 @@ Template Name: home
               }
             );
           }
-          if($(".section--group").position().top < 0){
+          if($(".section--group").position().top < $(this).scrollTop()){
             $(".square").css({
               position: 'fixed'
             });
           }
-          if($(".section--hoge").position().top < 5){
+          if($(".section--hoge").position().top < $(this).scrollTop()){
             $(".circle").css({
               position: 'fixed'
             });

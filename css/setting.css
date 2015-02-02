@@ -1,3 +1,6 @@
+body{
+  scrollbar-track-color: whitesmoke;
+}
 #comments{
   border-left: solid 5px rgba(0, 100, 0, 1);
   text-indent: 5px;
