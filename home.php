@@ -49,7 +49,7 @@ Template Name: home
       <div parts="wraparound">
         <div utility="table">
           <div utility="table-cell">
-            <marquee behavior="scroll" direction="down" scrollamount="6" height="150">ほげほげほげほげぼげ</marquee>
+            <marquee behavior="scroll" direction="down" scrollamount="6" height="150">Unitus</marquee>
           </div>
         </div>
       </div>
