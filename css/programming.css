@@ -1,0 +1,25 @@
+@media (max-width: 600px) {
+  div[main=programming]{
+    font-size: 10px;
+  }
+}
+div[main=programming]{
+  background-color: black;
+  color: rgb(148, 169, 255);
+  padding: 10px;
+}
+span[line-parts]{
+  letter-spacing: 1.2px;
+}
+span[line-Parts="author"]{
+  color: rgb(0, 199, 0);
+}
+span[line-Parts="category"]{
+  color: rgb(97, 0, 234);
+}
+span[line-Parts="date"]{
+  color: rgb(207, 19, 0);
+}
+a[line-Parts="show"]{
+  color: rgb(170, 170, 0);
+}

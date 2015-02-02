@@ -1,0 +1,58 @@
+#comments{
+  border-left: solid 5px rgba(0, 100, 0, 1);
+  text-indent: 5px;
+}
+.says{
+  display: none;
+}
+cite.fn a{
+  color: white;
+}
+cite.fn:before{
+  display: inline-block;
+  content: "@";
+}
+.comment-awaiting-moderation{
+  font-size: 10px;
+  color: orange;
+  display: inline-block;
+}
+.comment-meta.commentmetadata{
+  display: inline-block;
+}
+#respond{
+  color: whitesmoke;
+}
+#respond h3{
+  border-left: solid 5px rgba(0, 100, 0, 1);
+  text-indent: 5px;
+}
+#respond input, #respond textarea{
+  background-color: transparent;
+  border-radius: 5px;
+  border: solid 1px rgb(92, 92, 92);
+}
+
+#respond textarea{
+  width: 100%;
+  margin: 5px 0px;
+}
+
+#respond p{
+  margin: 2px 0;
+}
+
+#respond #submit{
+  background-color: rgb(60,60,60);
+  box-shadow: none;
+  border: solid 1px #555;
+  float: right;
+  display: block;
+}
+#respond .clear{
+  clear: both;
+}
+
+.navbar{
+  margin-bottom: 0;
+}
