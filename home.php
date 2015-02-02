@@ -10,23 +10,6 @@ Template Name: home
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/home.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/animation.css">
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/lib/jquery.marquee.js"></script>
-    <script type="text/javascript">
-    $(function () {
-        $("[parts=wraparound] marquee").marquee('pointer').mouseover(function () {
-            $(this).trigger('stop');
-        }).mouseout(function () {
-            $(this).trigger('start');
-        }).mousemove(function (event) {
-            if ($(this).data('drag') == true) {
-                this.scrollLeft = $(this).data('scrollX') + ($(this).data('x') - event.clientX);
-            }
-        }).mousedown(function (event) {
-            $(this).data('drag', true).data('x', event.clientX).data('scrollX', this.scrollLeft);
-        }).mouseup(function () {
-            $(this).data('drag', false);
-        });
-    });
-    </script>
   </head>
   <body>
     <?php the_post(); ?>
@@ -64,34 +47,12 @@ Template Name: home
         </div>
       </section>
       <div parts="wraparound">
-        <marquee behavior="scroll" direction="down" scrollamount="0.2" height="150">ぼげ</marquee>
-      </div>
-      <section panel="circle">
-        <div ball="yellow"></div>
-        <div ball="pink"></div>
-        <div ball="green"></div>
-        <div ball="blue"></div>
         <div utility="table">
           <div utility="table-cell">
-            <div class="container">
-              <div parts="title">
-                <div parts="theme">
-                  <?php the_title(); ?>
-                </div>
-                <div parts="logo">
-                  UNITUS<span dot>.</span>
-                </div>
-              </div>
-              <div box="comment">
-                これは最新のコメントです。
-              </div>
-              <div parts="content">
-                <?php the_content(); ?>
-              </div>
-            </div>
+            <marquee behavior="scroll" direction="down" scrollamount="6" height="150">ほげほげほげほげぼげ</marquee>
           </div>
         </div>
-      </section>
+      </div>
     </div>
     <script>
       $(function(){
@@ -99,8 +60,45 @@ Template Name: home
         var comment = $("[panel=about] blockquote").html();
         $("[panel=about] blockquote").remove();
         $("[box=comment]").html(comment);
-        console.log($("[parts=wraparound] marquee").marquee('pointer'));
-
+        var count = 0;
+        var state = "move";
+        var isReset = false
+        var proverb = [];
+        $("[panel=about] [parts=content] em").each(function(index){proverb.push($(this).text())}).parent().remove();
+        var timer_id = setInterval( function () {
+          if($("[parts=wraparound] .pointer div").position().top > -110 && state=="move" && isReset){
+            $("[parts=wraparound] .pointer").trigger("stop");
+            state="stop";
+          }else if(state=="stop"){
+            count+=1;
+            if(count > 300){
+              count = 0;
+              $("[parts=wraparound] .pointer").trigger("start");
+              state="move"
+              isReset = false;
+            }
+          }else if($("[parts=wraparound] .pointer div").position().top < -110 && !isReset){
+            isReset = true;
+            $("[parts=wraparound] .pointer div").html(proverb[Math.floor((proverb.length * Math.random()))]);
+          }
+        } , 10 );
+      });
+    </script>
+    <script type="text/javascript">
+      $(function () {
+          $("[parts=wraparound] marquee").marquee('pointer').mouseover(function () {
+              // $(this).trigger('stop');
+          }).mouseout(function () {
+              // $(this).trigger('start');
+          }).mousemove(function (event) {
+              if ($(this).data('drag') == true) {
+                  this.scrollLeft = $(this).data('scrollX') + ($(this).data('x') - event.clientX);
+              }
+          }).mousedown(function (event) {
+              $(this).data('drag', true).data('x', event.clientX).data('scrollX', this.scrollLeft);
+          }).mouseup(function () {
+              $(this).data('drag', false);
+          });
       });
     </script>
   </body>

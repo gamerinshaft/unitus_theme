@@ -35,7 +35,6 @@
     <script>
       $(function(){
         $("[menu-List]").html($("blockquote").get(0));
-        console.log($("blockquote").get());
       });
     </script>
   </body>

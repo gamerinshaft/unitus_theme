@@ -235,18 +235,20 @@ a[ribon="content"] span{
 div[parts="wraparound"]{
   position: relative;
   background-color: rgb(34, 34, 42);
-  height: 78px;
+  height: 150px;
   color: whitesmoke;
   overflow: hidden
 }
-div[parts="wraparound"] div {
-  height: 78px !important;
+div[parts="wraparound"] .pointer {
+  height: 100px !important;
+  width: 100% !important;
 }
 div[parts="wraparound"] div div{
-  font-size: 80px;
   position: relative;
-  top: -20px;
-  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  white-space: normal !important;
 }
 @media (max-width: 1200px){
   section[panel="about"] div[parts="logo"]{
