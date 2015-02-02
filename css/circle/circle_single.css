@@ -1,15 +1,15 @@
-section[module="top"]{
+section.section.section--top{
   background-position: center;
   background-size: cover;
   height: 320px;
   width: 100%;
   position: relative;
 }
-section[module="top"] .container{
+section.section.section--top .container{
   height: 100%;
   position: relative;
 }
-section[module="top"] h1{
+section.section.section--top h1{
   font-size: 80px;
   color: white;
   position: absolute;
@@ -20,10 +20,10 @@ section[module="top"] h1{
   margin: 0;
 }
 
-section[module="content"]{
+section.section.section--postcontent{
   background-color: whitesmoke;
 }
-div[parts="thumbnail"]{
+div.top__thumbnail{
   position: absolute;
   width: 200px;
   height: 200px;
@@ -35,24 +35,24 @@ div[parts="thumbnail"]{
   border: solid 8px white;
 }
 
-section[module="content"]{
+section.section.section--postcontent{
   padding-top: 60px;
   position: relative;
   width: 100%;
   height: auto;
 }
 
-section[module="content"] h1{
+section.section.section--postcontent h1{
   border-left: 8px solid #36465d;
   padding-left: 8px;
 }
-section[module="content"] p{
+section.section.section--postcontent p{
   font-size: 16px;
   position: relative;
   left: 16px;
 }
 
-section[module="content"] blockquote{
+section.section.section--postcontent blockquote{
   vertical-align: top;
   display: inline-block;
   background-color: rgba(19, 32, 124, 0.12);
@@ -63,7 +63,7 @@ section[module="content"] blockquote{
   position: relative;
 }
 
-section[module="content"] blockquote h1{
+section.section.section--postcontent blockquote h1{
   margin: 8px 0px;
   font-size: 24px;
   padding: 0px;
@@ -71,29 +71,29 @@ section[module="content"] blockquote h1{
   text-align: center;
   color: rgb(0, 31, 76);
 }
-section[module="content"] blockquote h1:after{
+section.section.section--postcontent blockquote h1:after{
   display: block;
   margin-top: 2px;
   content: "";
   border-top: solid 1px rgb(0, 31, 76);
   border-bottom: solid 1px rgb(239, 239, 239);
 }
-section[module="content"] blockquote p{
+section.section.section--postcontent blockquote p{
   z-index: 1;
   left: 0px;
 }
-section[module="content"] blockquote p strong{
+section.section.section--postcontent blockquote p strong{
   width: 100%;
   text-align: center;
   display: block;
   position: absolute;
   top: 20px;
 }
-section[module="content"] blockquote p em{
+section.section.section--postcontent blockquote p em{
   font-size: 56px;
 }
 
-section[module="content"] blockquote blockquote{
+section.section.section--postcontent blockquote blockquote{
   position: absolute;
   background: none;
   padding: 0;
@@ -106,13 +106,13 @@ section[module="content"] blockquote blockquote{
   height: 100%;
   font-size: 40px;
 }
-section[module="content"] blockquote blockquote i{
+section.section.section--postcontent blockquote blockquote i{
   position: absolute;
   display: inline-block;
   width: 100%;
   height: 100%;
 }
-section[module="content"] blockquote blockquote i:before{
+section.section.section--postcontent blockquote blockquote i:before{
   position: absolute;
   font-size: 60px;
   bottom: 24px;
@@ -121,25 +121,25 @@ section[module="content"] blockquote blockquote i:before{
   z-index: 0;
 }
 
-section[module="content"] hr{
+section.section.section--postcontent hr{
   display: none;
 }
 
 @media (max-width: 1200px){
 }
 @media (max-width: 992px){
-  section[module="content"] blockquote{
+  section.section.section--postcontent blockquote{
     width: 45%;
   }
 }
 @media (max-width: 768px){
-  div[parts="thumbnail"]{
+  div.top__thumbnail{
     width: 150px;
     height: 150px;
     left: 40px;
     bottom: 10px;
   }
-  section[module="top"] h1{
+  section.section.section--top h1{
     top: 20px;
     right: 56px;
     font-size: 56px;
@@ -150,13 +150,13 @@ section[module="content"] hr{
     -webkit-writing-mode: vertical-rl;
     word-break: break-word;
   }
-  section[module="content"] h1{
+  section.section.section--postcontent h1{
     font-size: 32px;
   }
-  section[module="content"]{
+  section.section.section--postcontent{
   padding-top: 0px;
   }
-  section[module="content"] p{
+  section.section.section--postcontent p{
     left: 0px;
     font-size: 14px;
   }
@@ -164,13 +164,13 @@ section[module="content"] hr{
     width: 100%;
     margin: 0 auto;
   }
-  section[module="content"] blockquote h1{
+  section.section.section--postcontent blockquote h1{
     font-size: 16px;
   }
-  section[module="content"] blockquote p em{
+  section.section.section--postcontent blockquote p em{
     font-size: 48px;
   }
-  section[module="content"] blockquote blockquote i:before{
+  section.section.section--postcontent blockquote blockquote i:before{
     font-size: 40px;
   }
 }

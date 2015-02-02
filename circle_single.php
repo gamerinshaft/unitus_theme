@@ -12,15 +12,15 @@
     ?>
     <?php the_post(); ?>
     <?php get_header() ?>
-    <div main="circle_single">
-      <section module="top">
-        <div utility="smoke"></div>
+    <div id="circle_single">
+      <section class="section section--top" data-js="sectionTop">
+        <div class="smoke"></div>
         <div class="container">
           <h1><?php the_title(); ?></h1>
-          <div parts="thumbnail" style="background-image: url('<?php echo $image_url[0]; ?>');"></div>
+          <div class="top__thumbnail" style="background-image: url('<?php echo $image_url[0]; ?>');"></div>
         </div>
       </section>
-      <section module="content">
+      <section class="section section--postcontent">
         <div class="container">
             <?php echo the_content(); ?>
         </div>
@@ -30,11 +30,10 @@
     </div>
     <script>
       $(function(){
-        $("[menu-List]").html($("blockquote").get(0));
-        $("section[module=top]").css({
-            backgroundImage: "url('" + $("[back-image] > img").attr("src") + "')"
+        $("[data-js=sectionTop]").css({
+            backgroundImage: "url('" + $("[data-js=back-image] > img").attr("src") + "')"
         });
-        $("[back-image] > img").remove();
+        $("[data-js=back-image] > img").remove();
         var icons = $("blockquote").find("blockquote")
         icons.each(function(index){
           var className = $(this).text();
