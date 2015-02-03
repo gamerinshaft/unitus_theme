@@ -15,7 +15,7 @@ Template Name: home
     <?php the_post(); ?>
     <section class="section section--about" data-js="sectionAbout">
       <div class="ribon__wrapper">
-        <a class="ribon__content" href="http://yahoo.co.jp">
+        <a class="ribon__content" href="<?php bloginfo('url'); ?>/enterprise">
           <span>企業様はこちら</span>
         </a>
       </div>
@@ -134,6 +134,7 @@ Template Name: home
     <script>
       $(function(){
         $(window).on("scroll",function(){
+          console.log($(this).scrollTop())
           if($("[data-js=sectionGroup]").position().top < $(this).scrollTop()){
             $("[data-js=sectionAbout] [data-js=object]").each(function(index){
               $("[data-js=sectionGroup]").append($(this).get(0));
@@ -141,9 +142,9 @@ Template Name: home
             $(".square").css({
               position: 'fixed'
             });
-            $("[data-js=sectionAbout]").css({
-              backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/music_back.jpg)',
-            });
+            // $("[data-js=sectionAbout]").css({
+            //   backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/music_back.jpg)',
+            // });
           }
           if($("[data-js=sectionAchievement]").position().top -5 < $(this).scrollTop()){
             $("[data-js=sectionGroup] [data-js=object]").each(function(index){
@@ -152,9 +153,9 @@ Template Name: home
             $(".circle").css({
               position: 'fixed'
             });
-             $("[data-js=sectionGroup]").css({
-              backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/lisp.png)',
-            });
+            //  $("[data-js=sectionGroup]").css({
+            //   backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/lisp.png)',
+            // });
           }
         });
 

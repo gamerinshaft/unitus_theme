@@ -2,8 +2,8 @@
 $post = $wp_query->post;
 if ( in_category('circle') ) {
 include(TEMPLATEPATH.'/circle_single.php');
-} elseif ( in_category('blog') ) {
-include(TEMPLATEPATH.'/blog_single.php');
+} elseif ( in_category('enterprise') ) {
+include(TEMPLATEPATH.'/enterprise_single.php');
 } elseif ( in_category('challenge') ) {
 include(TEMPLATEPATH.'/challenge_single.php');
 } elseif ( in_category('illust') ) {
