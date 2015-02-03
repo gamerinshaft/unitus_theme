@@ -19,10 +19,10 @@ Template Name: home
           <span>企業様はこちら</span>
         </a>
       </div>
-      <div class="diamond diamond--yellow"></div>
-      <div class="diamond diamond--pink"></div>
-      <div class="diamond diamond--blue"></div>
-      <div class="diamond diamond--green"></div>
+      <div data-js="object" class="diamond diamond--yellow"></div>
+      <div data-js="object" class="diamond diamond--pink"></div>
+      <div data-js="object" class="diamond diamond--blue"></div>
+      <div data-js="object" class="diamond diamond--green"></div>
       <div class="table">
         <div class="table-cell">
           <div class="container">
@@ -52,7 +52,7 @@ Template Name: home
         </div>
       </div>
     </div>
-    <section class="section section--group">
+    <section class="section section--group" data-js="sectionGroup">
       <div class="table">
         <div class="table-cell">
           <div class="container">
@@ -72,7 +72,7 @@ Template Name: home
                     <div class="row">
                       <div class="col-xs-12">
                         <div class="pull-right">
-                          <a class="btn btn-primary" href="http://yahoo.co.jp">団体一覧をみてみる</a>
+                          <a class="btn btn-primary" href="./circle">団体一覧をみてみる</a>
                         </div>
                       </div>
                     </div>
@@ -83,10 +83,10 @@ Template Name: home
           </div>
         </div>
       </div>
-      <div class="square square--yellow"></div>
-      <div class="square square--pink"></div>
-      <div class="square square--blue"></div>
-      <div class="square square--green"></div>
+      <div data-js="object" class="square square--yellow"></div>
+      <div data-js="object" class="square square--pink"></div>
+      <div data-js="object" class="square square--blue"></div>
+      <div data-js="object" class="square square--green"></div>
     </section>
     <div class="wraparound" data-js="wraparound">
       <div class="table">
@@ -95,7 +95,7 @@ Template Name: home
         </div>
       </div>
     </div>
-    <section class="section section--hoge">
+    <section class="section section--achievement" data-js="sectionAchievement">
       <div class="table">
         <div class="table-cell">
           <div class="container">
@@ -103,7 +103,7 @@ Template Name: home
               <div class="col-md-5">
                 <div class="title">
                   <div class="logo">
-                    Join<span class="dot">.</span>
+                    achieve<span class="dot">.</span>
                   </div>
                 </div>
               </div>
@@ -126,48 +126,34 @@ Template Name: home
           </div>
         </div>
       </div>
-      <div class="circle circle--yellow"></div>
-      <div class="circle circle--pink"></div>
-      <div class="circle circle--blue"></div>
-      <div class="circle circle--green"></div>
+      <div data-js="object" class="circle circle--yellow"></div>
+      <div data-js="object" class="circle circle--pink"></div>
+      <div data-js="object" class="circle circle--blue"></div>
+      <div data-js="object" class="circle circle--green"></div>
     </section>
     <script>
       $(function(){
         $(window).on("scroll",function(){
-          if($(this).scrollTop() == 0){
-            $(".square").animate(
-              {opacity: 0},
-              {
-                duration: 300,
-                complete: function(){
-                  $(this).css({
-                    position: "absolute",
-                    opacity: 1
-                  });
-                }
-              }
-            );
-            $(".circle").animate(
-              {opacity: 0},
-              {
-                duration: 300,
-                complete: function(){
-                  $(this).css({
-                    position: "absolute",
-                    opacity: 1
-                  });
-                }
-              }
-            );
-          }
-          if($(".section--group").position().top < $(this).scrollTop()){
+          if($("[data-js=sectionGroup]").position().top < $(this).scrollTop()){
+            $("[data-js=sectionAbout] [data-js=object]").each(function(index){
+              $("[data-js=sectionGroup]").append($(this).get(0));
+            });
             $(".square").css({
               position: 'fixed'
             });
+            $("[data-js=sectionAbout]").css({
+              backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/music_back.jpg)',
+            });
           }
-          if($(".section--hoge").position().top < $(this).scrollTop()){
+          if($("[data-js=sectionAchievement]").position().top -5 < $(this).scrollTop()){
+            $("[data-js=sectionGroup] [data-js=object]").each(function(index){
+              $("[data-js=sectionAchievement]").append($(this).get(0));
+            });
             $(".circle").css({
               position: 'fixed'
+            });
+             $("[data-js=sectionGroup]").css({
+              backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/programming_back.jpg)',
             });
           }
         });
@@ -177,7 +163,7 @@ Template Name: home
         $("[data-js=comment]").html(comment);
         var count = 0;
         var state = "move";
-        var isReset = false
+        var isReset = false;
         var proverb = [];
         $("[data-js=proverb] em").each(function(index){proverb.push($(this).text())}).parent().remove();
         var timer_id = setInterval( function () {
@@ -189,7 +175,7 @@ Template Name: home
             if(count > 300){
               count = 0;
               $("[data-js=wraparound] .pointer").trigger("start");
-              state="move"
+              state="move";
               isReset = false;
             }
           }else if($("[data-js=wraparound] .pointer div").position().top < -110 && !isReset){
