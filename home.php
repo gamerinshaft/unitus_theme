@@ -153,7 +153,7 @@ Template Name: home
               position: 'fixed'
             });
              $("[data-js=sectionGroup]").css({
-              backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/programming_back.jpg)',
+              backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/lisp.png)',
             });
           }
         });

@@ -1,9 +1,5 @@
-div[main="circle"]{
+div#circle{
   background-color: whitesmoke;
+  width: 100%;
+  height: 100%;
 }
-
-div[ball]{
-  position: absolute;
-  border-radius: 50%;
-}
-

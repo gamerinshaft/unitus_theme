@@ -16,7 +16,7 @@ Template Name: circle
   </head>
   <body>
     <?php get_header() ?>
-    <div main="circle">
+    <div id="circle">
       <div class="container">
         <?php $categories = get_categories(); ?>
         <?php the_post() ?>
@@ -27,11 +27,13 @@ Template Name: circle
                while(have_posts()) :
                 the_post();
                 $image_single_id = get_post_thumbnail_id();
-                $image_single_url = wp_get_attachment_image_src($image_id, true);
-                $image_single_url[0] = empty($image_single_url[0])?get_bloginfo('stylesheet_directory') . '/img/circle_back.jpg':$image_single_url[0];
-                echo '<img src="' . bloginfo('stylesheet_directory'); . "/" . $image_single_url[0] .'">';
-                echo '<li>' . get_the_title() . '</li>';
-              endwhile;
+                $image_single_url = wp_get_attachment_image_src($image_single_id, true);
+                $image_single_url[0] = empty($image_single_url[0])?get_bloginfo('stylesheet_directory') . '/img/circle_back.jpg':$image_single_url[0]; ?>
+
+                 <img src="<?php echo $image_single_url[0]?>">
+                 <li><?php echo the_title() ?></li>
+
+               <?php endwhile;
             wp_reset_query();
           endif;
         endforeach;
