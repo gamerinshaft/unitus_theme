@@ -6,7 +6,7 @@
 .top{
   width: 100%;
   height: 136px;
-  background-color: #00aba9;
+  background-color: #333E48;
   background-image: url("../../img/cloth/cloth4.png");
 }
 .content hr{
@@ -84,13 +84,16 @@
 @media (max-width: 1200px){
 }
 @media (max-width: 992px){
+  .content h2{
+    font-size: 24px;
+  }
 }
 @media (max-width: 768px){
   h1{
     font-size: 24px;
   }
   .content h2{
-    font-size: 24px;
+    font-size: 16px;
     margin: 8px 0px;
   }
   .content p{

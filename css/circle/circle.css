@@ -1,5 +1,136 @@
-#circle{
+#circles{
   background-color: whitesmoke;
   width: 100%;
   height: 100%;
+}
+#circles canvas{
+  width: 100%;
+}
+#circles .content h1:nth-of-type(4n) . {
+  border-left: 8px solid #00aba9;
+  padding-left: 8px;
+}
+
+#circles .content h1:nth-of-type(4n+1) {
+  border-left: 8px solid #d80073;
+  padding-left: 8px;
+}
+
+#circles .content h1:nth-of-type(4n+2) {
+  border-left: 8px solid #f0a30a;
+  padding-left: 8px;
+}
+
+#circles .content h1:nth-of-type(4n+3) {
+  border-left: 8px solid #60a917;
+  padding-left: 8px;
+}
+.top{
+  width: 100%;
+  height: 136px;
+  background-color: #333E48;
+  background-image: url("../../img/cloth/cloth2.png");
+}
+hr{
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #fff;
+}
+.top h1{
+  color: whitesmoke;
+  margin: 0px;
+}
+#circles .content h1{
+  font-weight: bold;
+  color: #454545;
+}
+
+.circle{
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  vertical-align: middle;
+  display: inline-block;
+  border: none;
+  width: 28%;
+  margin: 2%;
+  position: relative;
+}
+.circle__name{
+  font-size: 16px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+  padding: 4px;
+}
+
+.circle__name a{
+  color: whitesmoke;
+}
+
+
+.circle:nth-of-type(4n) .circle__name{
+  border-top: 4px solid #00aba9;
+}
+
+.circle:nth-of-type(4n+1) .circle__name{
+  border-top: 4px solid #d80073;
+}
+
+.circle:nth-of-type(4n+2) .circle__name{
+  border-top: 4px solid #f0a30a;
+}
+
+.circle:nth-of-type(4n+3) .circle__name{
+  border-top: 4px solid #60a917;
+}
+
+.point{
+  background-color: whitesmoke;
+  position: relative;
+  border-radius: 8px;
+}
+.point h2{
+  font-size: 14px;
+  position: relative;
+  margin: 0px;
+  top: 0px;
+  left: 0px;
+}
+.point .point__num{
+  font-size: 32px;
+  text-align: center;
+  padding: 10px 0px;
+}
+.point .point__num .unit{
+  font-size: 16px;
+}
+.points .col-xs-6:nth-of-type(4n) .point{
+  border: 3px solid #00aba9;
+}
+
+.points .col-xs-6:nth-of-type(4n+1) .point{
+  border: 3px solid #d80073;
+}
+
+.points .col-xs-6:nth-of-type(4n+2) .point{
+  border: 3px solid #f0a30a;
+}
+
+.points .col-xs-6:nth-of-type(4n+3) .point{
+  border: 3px solid #60a917;
+}
+@media (max-width: 1200px){
+}
+@media (max-width: 992px){
+  .circle{
+    width: 28%;
+  }
+}
+@media (max-width: 768px){
+  .circle{
+    width: 45%;
+  }
 }

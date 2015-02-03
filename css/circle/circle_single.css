@@ -80,7 +80,10 @@ section.section.section--postcontent blockquote h1:after{
 }
 section.section.section--postcontent blockquote p{
   z-index: 1;
+  padding-bottom: 72px;
+  margin: 0px;
   left: 0px;
+  word-break: break-word !important;
 }
 section.section.section--postcontent blockquote p strong{
   width: 100%;
@@ -166,6 +169,9 @@ section.section.section--postcontent hr{
   }
   section.section.section--postcontent blockquote h1{
     font-size: 16px;
+  }
+  section.section.section--postcontent blockquote p {
+    padding-bottom: 72px;
   }
   section.section.section--postcontent blockquote p em{
     font-size: 48px;
