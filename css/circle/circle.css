@@ -6,22 +6,22 @@
 #circles canvas{
   width: 100%;
 }
-#circles .content h1:nth-of-type(4n) . {
+#circles .content .section:nth-of-type(4n) h1{
   border-left: 8px solid #00aba9;
   padding-left: 8px;
 }
 
-#circles .content h1:nth-of-type(4n+1) {
+#circles .content .section:nth-of-type(4n+1) h1{
   border-left: 8px solid #d80073;
   padding-left: 8px;
 }
 
-#circles .content h1:nth-of-type(4n+2) {
+#circles .content .section:nth-of-type(4n+2) h1{
   border-left: 8px solid #f0a30a;
   padding-left: 8px;
 }
 
-#circles .content h1:nth-of-type(4n+3) {
+#circles .content .section:nth-of-type(4n+3) h1{
   border-left: 8px solid #60a917;
   padding-left: 8px;
 }
@@ -86,7 +86,9 @@ hr{
 .circle:nth-of-type(4n+3) .circle__name{
   border-top: 4px solid #60a917;
 }
-
+.statistics{
+  padding: 4px;
+}
 .point{
   background-color: whitesmoke;
   position: relative;

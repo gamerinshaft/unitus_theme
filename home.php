@@ -95,7 +95,7 @@ Template Name: home
         </div>
       </div>
     </div>
-    <section class="section section--achievement" data-js="sectionAchievement">
+    <section class="section section--event" data-js="sectionAchievement">
       <div class="table">
         <div class="table-cell">
           <div class="container">
@@ -103,7 +103,7 @@ Template Name: home
               <div class="col-md-5">
                 <div class="title">
                   <div class="logo">
-                    achieve<span class="dot">.</span>
+                    Event<span class="dot">.</span>
                   </div>
                 </div>
               </div>
@@ -131,32 +131,33 @@ Template Name: home
       <div data-js="object" class="circle circle--blue"></div>
       <div data-js="object" class="circle circle--green"></div>
     </section>
+    <?php get_footer() ?>
     <script>
       $(function(){
         $(window).on("scroll",function(){
           console.log($(this).scrollTop())
-          if($("[data-js=sectionGroup]").position().top < $(this).scrollTop()){
-            $("[data-js=sectionAbout] [data-js=object]").each(function(index){
-              $("[data-js=sectionGroup]").append($(this).get(0));
-            });
-            $(".square").css({
-              position: 'fixed'
-            });
-            // $("[data-js=sectionAbout]").css({
-            //   backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/music_back.jpg)',
-            // });
-          }
-          if($("[data-js=sectionAchievement]").position().top -5 < $(this).scrollTop()){
-            $("[data-js=sectionGroup] [data-js=object]").each(function(index){
-              $("[data-js=sectionAchievement]").append($(this).get(0));
-            });
-            $(".circle").css({
-              position: 'fixed'
-            });
-            //  $("[data-js=sectionGroup]").css({
-            //   backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/lisp.png)',
-            // });
-          }
+          // if($("[data-js=sectionGroup]").position().top < $(this).scrollTop()){
+          //   $("[data-js=sectionAbout] [data-js=object]").each(function(index){
+          //     $("[data-js=sectionGroup]").append($(this).get(0));
+          //   });
+          //   $(".square").css({
+          //     position: 'fixed'
+          //   });
+          //   // $("[data-js=sectionAbout]").css({
+          //   //   backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/music_back.jpg)',
+          //   // });
+          // }
+          // if($("[data-js=sectionAchievement]").position().top -5 < $(this).scrollTop()){
+          //   $("[data-js=sectionGroup] [data-js=object]").each(function(index){
+          //     $("[data-js=sectionAchievement]").append($(this).get(0));
+          //   });
+          //   $(".circle").css({
+          //     position: 'fixed'
+          //   });
+          //   //  $("[data-js=sectionGroup]").css({
+          //   //   backgroundImage: 'url(<?php bloginfo('stylesheet_directory'); ?>/img/lisp.png)',
+          //   // });
+          // }
         });
 
         var comment = $("[data-js=sectionAbout] blockquote").html();

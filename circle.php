@@ -28,13 +28,14 @@ Template Name: circle
     <div class="container">
       <div class="content">
        <div class="row">
-        <div class="col-md-7">
+        <div class="section col-md-7">
           <h1>加盟団体一覧</h1>
           <div class="circle-list">
             <hr>
             <?php $categories = get_categories(); ?>
             <?php foreach($categories as $category) :
               if($category->cat_name == "circle") :
+                $circleNum =  $category->count;
                 query_posts('showposts=0&cat=' . $category->cat_ID);
                    while(have_posts()) :
                     the_post();
@@ -57,13 +58,13 @@ Template Name: circle
             ?>
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="section col-md-5">
           <h1>統計情報</h1>
           <div class="status">
             <hr>
             <div class="row">
               <div class="col-xs-12">
-                <div class="well">
+                <div class="well statistics">
                   <canvas id="people_num"></canvas>
                 </div>
               </div>
@@ -73,7 +74,7 @@ Template Name: circle
                 <div class="well point">
                   <h2>サークル数</h2>
                   <div class="point__num">
-                    24<span class="unit">人</span>
+                    <?php echo $circleNum ?><span class="unit">団体</span>
                   </div>
                 </div>
               </div>

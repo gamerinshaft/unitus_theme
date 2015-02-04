@@ -126,7 +126,7 @@ section.section.section--about .comment:before {
         diamond
 ====================*/
 .diamond{
-  position: fixed;
+  position: absolute;
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -349,10 +349,16 @@ section.section.section--group .logo .dot{
 }
 
 /*====================
-        group
+        event
 ====================*/
 section.section.section--achivement{
   z-index: 8;
+}
+section.section.section--event .logo .dot{
+  -moz-animation: dotAnime 20s ease 0s infinite alternate;
+  -webkit-animation: dotAnime 20s ease 0s infinite alternate;
+  -o-animation: dotAnime 20s ease 0s infinite alternate;
+  -ms-animation: dotAnime 20s ease 0s infinite alternate;
 }
 @media (max-width: 1200px){
   section.section .logo{
