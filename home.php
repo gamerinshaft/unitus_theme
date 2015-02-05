@@ -206,20 +206,14 @@ Template Name: home
     <script type="text/javascript">
       $(document).ready(function(){
          var agent = navigator.userAgent;
-         console.log(agent);
-         if(agent.search(/iPhone/) != -1){
+         var height = $("section.section").height() + "px"
+
+         if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1 || agent.search(/Android/) != -1){
          $('section.section').css({
-            height: $("section.section").height() + " !important"
-          });
-         }else if(agent.search(/iPad/) != -1){
-         $('section.section').css({
-            height: $("section.section").height() + " !important"
-          });
-         }else if(agent.search(/Android/) != -1){
-         $('section.section').css({
-            height: $("section.section").height() + " !important"
+            height: height
           });
          }
+
       });
     </script>
   </body>

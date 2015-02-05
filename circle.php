@@ -92,34 +92,40 @@ Template Name: circle
       </div>
     </div>
     <script>
-      $(window).on("resize load",function(){
-        $(".circle").css({
-          height: $(".circle").width()
+      $(function(){
+        $(window).on("resize load",function(){
+          $(".circle").css({
+            height: $(".circle").width()
+          })
         })
-      })
+      });
     </script>
     <script>
-      var circle_people_num = {
-        "config": {
-          "title": "加盟サークル総人数",
-          "titleColor": "#454545",
-          "subTitle": "Unitusに関わっている加盟団体の総人数です。",
-          "subTitleColor": "#555",
-          "unit": {"unit":"本/ A自販機の販売本数","left":10,"top":20,"align":"left","color":"#000","font":"100 12px 'Arial'"
-                },
-          "bg"  : "whitesmoke",
-          "lineWidth": 2,
-          "useShadow": "no",
-          "type": "line"
-        },
+      $.ajax({
+        url: "http://unitus-core.azurewebsites.net/circlelist/debug",
+        type: "POST",
+        success: function(data,status,other){
+          var circle_people_num = {
+            "config": {
+              "title": "加盟サークル総人数",
+              "titleColor": "#454545",
+              "subTitle": "Unitusに関わっている加盟団体の総人数です。",
+              "subTitleColor": "#555",
+              "unit": {"unit":"本/ A自販機の販売本数","left":10,"top":20,"align":"left","color":"#000","font":"100 12px 'Arial'"
+                    },
+              "bg"  : "whitesmoke",
+              "lineWidth": 2,
+              "useShadow": "no",
+              "type": "line",
+              "xScaleRotate": -45,
+            },
 
-        "data": [
-          ["年度",2007,2008,2009,2010,2011,2012,2013],
-          ["ジュース",60,435,456,352,567,678,1260],
-          ["ウーロン",200,123,312,200,402,300,512]
-        ]
-      };
-      ccchart.init('people_num', circle_people_num)
+            "data": data.Content.GraphPoints
+          };
+
+          ccchart.init('people_num', circle_people_num)
+        }
+      })
     </script>
   </body>
 </html>

@@ -18,7 +18,7 @@ Template Name: event
     <section class="event-carousel">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
-          <?php $categories = get_categories(); ?>
+          <?php $categories = get_categories(''); ?>
             <?php foreach($categories as $category) :
               if($category->cat_name == "event") :
                 $circleNum =  $category->count;
@@ -29,6 +29,7 @@ Template Name: event
                     $image_single_url = wp_get_attachment_image_src($image_single_id, true);
                     $image_single_url[0] = empty($image_single_url[0])?get_bloginfo('stylesheet_directory') . '/img/circle_back.jpg':$image_single_url[0];
                     ?>
+
 
 <!--                   <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -59,6 +60,10 @@ Template Name: event
           <span class="sr-only">Next</span>
         </a>
       </div>
+    </section>
+    <section class="event-content">
+      <h1>こんにちは</h1>
+      <p>hello,worldfafasfasfsd</p>
     </section>
 
     <?php get_footer() ?>
