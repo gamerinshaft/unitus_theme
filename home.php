@@ -13,12 +13,12 @@ Template Name: home
   </head>
   <body id="home">
     <?php the_post(); ?>
+    <div class="ribon__wrapper">
+      <a class="ribon__content" href="<?php bloginfo('url'); ?>/enterprise">
+        <span>企業様はこちら</span>
+      </a>
+    </div>
     <section class="section section--about" data-js="sectionAbout">
-      <div class="ribon__wrapper">
-        <a class="ribon__content" href="<?php bloginfo('url'); ?>/enterprise">
-          <span>企業様はこちら</span>
-        </a>
-      </div>
       <div data-js="object" class="diamond diamond--yellow"></div>
       <div data-js="object" class="diamond diamond--pink"></div>
       <div data-js="object" class="diamond diamond--blue"></div>
@@ -72,7 +72,7 @@ Template Name: home
                     <div class="row">
                       <div class="col-xs-12">
                         <div class="pull-right">
-                          <a class="btn btn-primary" href="./circle">団体一覧をみてみる</a>
+                          <a class="btn btn-primary" href="<?php bloginfo('url'); ?>/circle">団体一覧をみてみる</a>
                         </div>
                       </div>
                     </div>
@@ -115,7 +115,7 @@ Template Name: home
                     <div class="row">
                       <div class="col-xs-12">
                         <div class="pull-right">
-                          <a class="btn btn-primary" href="http://yahoo.co.jp">団体一覧をみてみる</a>
+                          <a class="btn btn-primary" href="<?php bloginfo('url'); ?>/event">イベント一覧をみてみる</a>
                         </div>
                       </div>
                     </div>
@@ -135,8 +135,7 @@ Template Name: home
     <script>
       $(function(){
         $(window).on("scroll",function(){
-          console.log($(this).scrollTop())
-          // if($("[data-js=sectionGroup]").position().top < $(this).scrollTop()){
+          // if($("[data-js=sectionGroup]").position().top < $(this).scrollTop()){a
           //   $("[data-js=sectionAbout] [data-js=object]").each(function(index){
           //     $("[data-js=sectionGroup]").append($(this).get(0));
           //   });
@@ -202,6 +201,25 @@ Template Name: home
           }).mouseup(function () {
               $(this).data('drag', false);
           });
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+         var agent = navigator.userAgent;
+         console.log(agent);
+         if(agent.search(/iPhone/) != -1){
+         $('section.section').css({
+            height: $("section.section").height() + " !important"
+          });
+         }else if(agent.search(/iPad/) != -1){
+         $('section.section').css({
+            height: $("section.section").height() + " !important"
+          });
+         }else if(agent.search(/Android/) != -1){
+         $('section.section').css({
+            height: $("section.section").height() + " !important"
+          });
+         }
       });
     </script>
   </body>

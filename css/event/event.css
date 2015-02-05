@@ -1,0 +1,14 @@
+#event{
+  background-color: red;
+}
+.event-carousel{
+  background-color: whitesmoke;
+  height: 240px;
+}
+
+.event-carousel .item{
+  width: 100%;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+}
