@@ -49,8 +49,6 @@ Template Name: circle
                           </a>
                         </div>
                     </div>
-
-
                    <?php endwhile;
                 wp_reset_query();
               endif;

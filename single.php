@@ -16,8 +16,8 @@ include(TEMPLATEPATH.'/novel_single.php');
 include(TEMPLATEPATH.'/photo_single.php');
 } elseif ( in_category('programming') ) {
 include(TEMPLATEPATH.'/programming_single.php');
-} elseif ( in_category('cooking') ) {
-include(TEMPLATEPATH.'/cooking_single.php');
+} elseif ( in_category('project') ) {
+include(TEMPLATEPATH.'/project_single.php');
 } else {
 include(TEMPLATEPATH.'/uncategorized_single.php');
 }

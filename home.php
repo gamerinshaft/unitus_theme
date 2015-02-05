@@ -12,6 +12,7 @@ Template Name: home
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/lib/jquery.marquee.js"></script>
   </head>
   <body id="home">
+    <?php get_header(); ?>
     <?php the_post(); ?>
     <div class="ribon__wrapper">
       <a class="ribon__content" href="<?php bloginfo('url'); ?>/enterprise">
