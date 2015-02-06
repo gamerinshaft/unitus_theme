@@ -4,6 +4,7 @@
   width: 100%;
   -webkit-font-smoothing: antialiased;
 }
+
 section.section{
   position: relative;
   z-index: 1;
