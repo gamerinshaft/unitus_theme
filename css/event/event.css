@@ -90,11 +90,13 @@
   background-position: center;
 }
 .cell{
+  position: relative;
   display: block;
   background-size: cover !important;
   background-position: center !important;
 }
 .cell:hover{
+  z-index: 5;
   -moz-transition: 0.3s ease-in-out !important;
   -webkit-transition: 0.3s ease-in-out !important;
   -o-transition: 0.3s ease-in-out !important;
@@ -130,13 +132,15 @@
   bottom: 0px;
   left: 0px;
 }
-.event-panel .smoke:before{
+.cell .smoke:before{
   content: "このイベントは終了しました。";
   color: white;
   padding: 10px;
+  text-align: center;
+  width: 100%;
   display: block;
+  top: 42%;
   position: absolute;
-
 }
 
 

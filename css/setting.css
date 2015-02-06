@@ -59,3 +59,8 @@ cite.fn:before{
 .navbar{
   margin-bottom: 0;
 }
+@media (min-width: 1200px){
+.container{
+  width: 880px;
+}
+}

@@ -361,6 +361,11 @@ section.section.section--event .logo .dot{
   -o-animation: dotAnime 20s ease 0s infinite alternate;
   -ms-animation: dotAnime 20s ease 0s infinite alternate;
 }
+@media (min-width: 1200px){
+  .container{
+    width: 1170px;
+  }
+}
 @media (max-width: 1200px){
   section.section .logo{
     font-size: 120px;

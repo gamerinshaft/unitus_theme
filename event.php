@@ -61,6 +61,7 @@ Template Name: event
             $w = mt_rand(0, 100) + 200;
             $h = mt_rand(0, 100) + 200;
             $finished_content .=  '<a href="'. get_permalink() .'" class="cell" style="background-image: url(\'' . $image_single_url[0] . '\'); width:'. $w . 'px; height:' . $h . 'px; ">';
+            $finished_content .= "<div class='smoke'></div>";
             $finished_content .= "<div class='taglist'>";
             foreach($tags as $tag):
               $finished_content .= "<span class='tag'>" . $tag->name . "</span>";
@@ -87,17 +88,17 @@ Template Name: event
   <body id="event">
     <?php the_post(); ?>
     <section class="event-carousel">
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <div id="event-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
           <?php echo $top_content ?>
         </div>
         <!-- Controls -->
         <?php if($top_content_num != 1) :?>
-          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <a class="left carousel-control" href="#event-carousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <a class="right carousel-control" href="#event-carousel" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
