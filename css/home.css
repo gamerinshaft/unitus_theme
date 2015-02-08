@@ -376,6 +376,7 @@ section.section.section--event .logo .dot{
   section.section .logo{
     font-size: 96px;
     line-height: 88px;
+    text-align: center;
   }
    section.section.section--about .theme{
     letter-spacing: 2px;
