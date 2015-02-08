@@ -60,15 +60,15 @@ Template Name: home
               <div class="col-md-5">
                 <div class="title">
                   <div class="logo">
-                    Join<span class="dot">.</span>
+                    Circle<span class="dot">.</span>
                   </div>
                 </div>
               </div>
               <div class="col-md-7">
                 <div class="content">
                   <p>
-                    Unitusは学生エンジニアを統合する事を目的としたプログラミング連盟です。連盟に加盟してもらう事に寄って、それぞれの活動をより綿密なものにします。
-                    難しい手続き等は一切ありません。フォームから情報を送信して頂ければこちらからコンタクトをします。
+                    Unitusには多数のプログラム関連サークルが参加しています。Unitusは学生間の交流を目的として、プログラミングの大会や勉強会、交流会を企画しています。（詳しくはEvent参照）
+                    ここにはそうした活動を通して繋がりを持った各団体の活動記録等を載せています。
                     <div class="row">
                       <div class="col-xs-12">
                         <div class="pull-right">
@@ -110,8 +110,7 @@ Template Name: home
               <div class="col-md-7">
                 <div class="content">
                   <p>
-                    Unitusは学生エンジニアを統合する事を目的としたプログラミング連盟です。連盟に加盟してもらう事に寄って、それぞれの活動をより綿密なものにします。
-                    難しい手続き等は一切ありません。フォームから情報を送信して頂ければこちらからコンタクトをします。
+                    Unitusは学生間の交流を目的として、プログラミングの大会や勉強会、交流会を企画しています。ここでは開催予定のイベントや終了済のイベントの情報を公開してます。
                     <div class="row">
                       <div class="col-xs-12">
                         <div class="pull-right">
