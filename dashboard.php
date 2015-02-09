@@ -57,7 +57,6 @@ Template Name: dashboard
               <li role="presentation" class="active"><a href="#circles" aria-controls="circles" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-th"></i><span class="title">加盟団体一覧</span></a></li>
               <li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-envelope"></i><span class="title">メール管理</span></a></li>
               <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-user"></i><span class="title">プロフィール</span></a></li>
-              <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
             </ul>
           </section>
 
@@ -146,8 +145,6 @@ Template Name: dashboard
                 </div>
               </div>
 
-              <!-- Setting tab -->
-              <div role="tabpanel" class="tab-pane fade" id="settings">settings</div>
             </div>
           </section>
         </div>
@@ -163,7 +160,6 @@ Template Name: dashboard
             <ul class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active"><a href="#admin_new_circle" aria-controls="admin_new_circle" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-plus"></i><span class="title">新規団体追加</span></a></li>
               <li role="presentation"><a href="#admin_userList" aria-controls="admin_userList" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-th-list"></i><span class="title">ユーザー一覧</span></a></li>
-              <li role="presentation"><a href="#admin_profile" aria-controls="admin_profile" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-user"></i><span class="title">プロフィール</span></a></li>
             </ul>
           </section>
 
@@ -260,22 +256,6 @@ Template Name: dashboard
                     </tr>
                   </tbody>
                 </table>
-              </div>
-              <!--============================================================
-              |               管理者用 >  コンテンツ  >  プロフィール               |
-              =============================================================-->
-              <!-- Profile tab -->
-              <div role="tabpanel" class="tab-pane fade" id="admin_profile">
-                <h1>プロフィール</h1>
-                <div class="content">
-                  <div class="row">
-                    <div class="col-xs-3">
-                      <img class="profile_image" src="<?php bloginfo("stylesheet_directory") ?>/img/profile.png" alt="...">
-                      <h1 class="profile_name">種市 隼兵</h1>
-                      <h2 class="profile_id">@gamerinshaft</h2>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </section>

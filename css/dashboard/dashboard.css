@@ -228,7 +228,6 @@ section.sidebar ul li.active a:hover{
    section optionbar
 =======================*/
 section.optionbar{
-  overflow: scroll;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -504,7 +503,7 @@ section.content h1{
 #admin_userList table tr i[data-js="copyMail"]{
   display: block;
 }
-#admin_userList table tr:hover i{
+#admin_userList table tr:hover .name i{
   display: block;
   cursor: pointer;
   color: white;
