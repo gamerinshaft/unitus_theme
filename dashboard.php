@@ -218,42 +218,7 @@ Template Name: dashboard
                       <th class="mail_w">メールアドレス</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td class="name name_w">種市隼兵<i data-js="deleteAccount" class="fa fa-times"></i></td>
-                      <td class="author author_w">編集者</td>
-                      <td class="number number_w">28</td>
-                      <td class="university university_w">東京大学</td>
-                      <td class="mail mail_w">gamerinshaft@gmail.com<i class="fa fa-clipboard" data-js="copyMail" data-clipboard-text="gamerinshaft@gmail.com"></i></td>
-                    </tr>
-                    <tr>
-                      <td class="name name_w">石井翔<i data-js="deleteAccount" class="fa fa-times"></i></td>
-                      <td class="author author_w">閲覧者</td>
-                      <td class="number number_w">44</td>
-                      <td class="university university_w">お茶の水女子大学</td>
-                      <td class="mail mail_w">unitus.tus@gmail.com<i class="fa fa-clipboard" data-js="copyMail" data-clipboard-text="unitus.tus@gmail.com"></i></td>
-                    </tr>
-                    <tr>
-                      <td class="name name_w">中森祐人<i data-js="deleteAccount" class="fa fa-times"></i></td>
-                      <td class="author author_w">閲覧者</td>
-                      <td class="number number_w">28</td>
-                      <td class="university university_w">青山学院大学</td>
-                      <td class="mail mail_w">taneichi.unitus@gmail.com<i class="fa fa-clipboard" data-js="copyMail" data-clipboard-text="taneichi.unitus@gmail.com"></i></td>
-                    </tr>
-                    <tr>
-                      <td class="name name_w">セバスチャン<i data-js="deleteAccount" class="fa fa-times"></i></td>
-                      <td class="author author_w">閲覧者</td>
-                      <td class="number number_w">8</td>
-                      <td class="university university_w">芝浦工業大学</td>
-                      <td class="mail mail_w">trytestjapan@gmail.com<i class="fa fa-clipboard" data-js="copyMail" data-clipboard-text="trytestjapan@gmail.com"></i></td>
-                    </tr>
-                    <tr>
-                      <td class="name name_w">シュガー<i data-js="deleteAccount" class="fa fa-times"></i></td>
-                      <td class="author author_w">閲覧者</td>
-                      <td class="number number_w">128</td>
-                      <td class="university university_w">デジタルハリウッド大学</td>
-                      <td class="mail mail_w">j.tane3ma@gmail.com<i class="fa fa-clipboard" data-js="copyMail" data-clipboard-text="j.tane3ma@gmail.com"></i></td>
-                    </tr>
+                  <tbody data-js="userList">
                   </tbody>
                 </table>
               </div>
@@ -302,6 +267,9 @@ Template Name: dashboard
                     speed : 100
                 }
             });
+            setTimeout(function() {
+              $("#" + n.options.id).trigger("click");
+            }, 3000);
         }
 
         // function generateAll() {
@@ -340,6 +308,59 @@ Template Name: dashboard
       });
     </script>
 
+    <!-- 管理者用ajax -->
+    <script>
+      var sendData = {
+          count: 40,
+          offset: 0
+       };
+      $.ajax(
+      {
+          type: "GET",
+          url:"http://unitus-core.azurewebsites.net/Person/Dummy",
+          data: sendData,
+          success:function(msg)
+          {
+              if (msg.Success)
+              {
+                generate("success", "サークル追加", "正常にサークルの追加が完了しました。");
+                $.each(msg.Content.Persons, function(){
+                  var text =  ''
+                      text += '<tr>'
+                      text += '<td class="name name_w">' + this.Name + '<i data-js="deleteAccount" class="fa fa-times"></i></td>'
+                      text += '<td class="author author_w">' + "閲覧者" + '</td>'
+                      text += '<td class="number number_w">' + this.Grade + '</td>'
+                      text += '<td class="university university_w">' + this.BelongedTo + '</td>'
+                      text += '<td class="mail mail_w">' + this.UserName + '<i class="fa fa-clipboard" data-js="copyMail" data-clipboard-text="' + this.UserName +'"></i></td>'
+                      text += '</tr>'
+                  $("[data-js=userList]").append(text);
+                });
+
+                // list生成時に監視するエレメントの生成
+                $("[data-js=copyMail]").each(function(index){
+                  var client = new ZeroClipboard( $(this) );
+                  client.on( "aftercopy", function( event ) {
+                    obj = event.data;
+                    for(var key in obj){
+                      generate('info', "コピー成功", obj[key] + "をクリップボードにコピーしました。")
+                    }
+                  });
+                });
+                $("[data-js=deleteAccount]").on("click", function(){
+                  if(confirm($(this).parent().text() + "を削除しますか？")){
+                    generate('success', "削除成功", $(this).parent().text()+"を削除しました");
+                  }else{
+                    generate('error', "キャンセル", $(this).parent().text()+"の削除をとりやめました");
+                  }
+                });
+              } else
+              {
+                generate("warning", "サークル追加に失敗しました", "正常にサークルの追加ができませんでした。エラーメッセージ「"+msg.ErrorMessage+"」");
+              }
+          }
+      });
+    </script>
+
     <!-- 管理者用 -->
     <script>
       $(function(){
@@ -352,18 +373,8 @@ Template Name: dashboard
         $("[data-js=close_admin]").on("click", function(e){
           $("#administrator").addClass("hidden_panel");
         });
-        $("[data-js=copyMail]").each(function(index){
-          var client = new ZeroClipboard( $(this) );
-        });
-        $("[data-js=deleteAccount]").on("click", function(){
-          if(confirm($(this).parent().text() + "を削除しますか？")){
-            generate('info', "削除成功", $(this).parent().text()+"を削除しました");
-          }else{
-            generate('info', "キャンセル", $(this).parent().text()+"の削除をとりやめました");
-          }
-        });
+
       });
     </script>
-
   </body>
 </html>
