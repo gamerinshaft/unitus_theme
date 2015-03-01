@@ -55,7 +55,7 @@ Template Name: dashboard
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active"><a href="#circles" aria-controls="circles" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-th"></i><span class="title">加盟団体一覧</span></a></li>
-              <li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-envelope"></i><span class="title">メール管理</span></a></li>
+              <li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-envelope"></i><span class="title">部員招待</span></a></li>
               <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-user"></i><span class="title">プロフィール</span></a></li>
             </ul>
           </section>
@@ -122,10 +122,39 @@ Template Name: dashboard
               </div>
 
               <!--============================================================
-              |            一般ユーザー >  コンテンツ  >  メール管理                |
+              |            一般ユーザー >  コンテンツ  >  メンバー招待                |
               =============================================================-->
               <div role="tabpanel" class="tab-pane fade" id="mail">
-                <h1>メール管理</h1>
+                <h1>メンバー招待</h1>
+                <p>このページでは、自分が権限を与えられているサークルないし部活のメンバーを招待することが出来ます。</p>
+                <form>
+                  <div class="form-group">
+                    <label for="circle_name">団体名</label>
+                    <input type="text" class="form-control" id="circle_name" placeholder="応用数学研究部">
+                    <label for="circle_description">団体説明</label>
+                    <textarea class="form-control" id="circle_description" placeholder="団体説明を記入" rows="10"></textarea>
+                    <label for="circle_num">人数</label>
+                    <input type="text" class="form-control" id="circle_num" placeholder="18">
+                    <label for="site_name">ウェブサイト</label>
+                    <input type="text" class="form-control" id="site_name" placeholder="http://unitus-ac.com">
+                    <label for="university">所属大学</label>
+                    <input type="text" class="form-control" id="university" placeholder="東京理科大学">
+                    <label for="remarks">備考</label>
+                    <textarea class="form-control" id="remarks" placeholder="インカレサークルです。"></textarea>
+                    <label for="contact">連絡先</label>
+                    <input type="text" class="form-control" id="contact" placeholder="Tel: 090123456">
+                    <label for="leader">代表者</label>
+                    <input type="text" class="form-control" id="leader" placeholder="@hogehoge">
+                    <div class="checkbox">
+                      <label>
+                        <input id="isAcceptOutside" type="checkbox"> 外部生のサークル加入可否
+                      </label>
+                    </div>
+                    <div class="pull-right">
+                      <button type="submit" class="btn btn-primary">保存する</button>
+                    </div>
+                  </div>
+                </form>
               </div>
 
               <!--============================================================
@@ -173,13 +202,13 @@ Template Name: dashboard
               |               管理者用 >  コンテンツ  >  団体作成                  |
               =============================================================-->
               <div role="tabpanel" class="tab-pane fade in active" id="admin_new_circle">
-                <h1>新規団体追加</h1>
+                <h1>新規団体追加<div class="label label-default" data-js="markdown">プレビュー</div></h1>
                 <form>
                   <div class="form-group">
                     <label for="circle_name">団体名</label>
                     <input type="text" class="form-control" id="circle_name" placeholder="応用数学研究部">
                     <label for="circle_description">団体説明</label>
-                    <textarea class="form-control" id="circle_description" placeholder="団体説名を記入"></textarea>
+                    <textarea class="form-control" id="circle_description" placeholder="団体説明を記入" rows="10"></textarea>
                     <label for="circle_num">人数</label>
                     <input type="text" class="form-control" id="circle_num" placeholder="18">
                     <label for="site_name">ウェブサイト</label>
@@ -234,6 +263,194 @@ Template Name: dashboard
         </div>
       </div>
     </div>
+<!--===============================================================================================
+                                    マークダウンモーダル
+================================================================================================-->
+
+    <!-- markdownModal -->
+    <div class="modal fade" id="markdownModal" tabindex="-1" role="dialog" aria-labelledby="markdownModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="markdownModalLabel">プレビュー</h4>
+          </div>
+          <div class="modal-body">
+            <div id="circle_single">
+              <section class="section section--top" data-js="sectionTop" style="background-image: url(http://unitus.azurewebsites.net/wp-content/uploads/2015/02/math-algorithm.jpg);">
+              <div class="smoke">
+              </div>
+              <div class="container">
+                <h1>応用数学研究部</h1>
+                <div class="top__thumbnail" style="background-image: url('http://unitus-ac.com/wp-content/uploads/2015/02/imgteaser_cdon-276x300.png');">
+                </div>
+              </div>
+              </section>
+              <section class="section section--postcontent">
+              <div class="container">
+                <p>
+                  <a data-js="back-image" href="http://unitus.azurewebsites.net/wp-content/uploads/2015/02/math-algorithm.jpg"></a>
+                </p>
+                <h1>団体説明</h1>
+                <p>
+                  東京理科大学応用数学研究部は、創立半世紀を超える歴史のある部活です。古くは応用数学を深く研究する部活ではありましたが、今ではコンピュータープログラミングをメインとする部活になっています。<br>
+                   主な活動は、新入生やプログラミング初心者に対するプログラミング講習、特にC言語C++言語を用いた講習をメインに行っています。<br>
+                   また、応用数学という名前でもあるということで、習熟度の高い部員はより高度な数学を必要とする分野(機械学習やコンピュータグラフィクス)のゼミをしたりしてお互いにスキルを高めあうように努力しています。
+                </p>
+                <h1>団体基本情報</h1>
+                <blockquote>
+                  <h1>メンバー数</h1>
+                  <p>
+                    <strong><em>28</em>人</strong>
+                  </p>
+                  <blockquote>
+                    <i class="glyphicon glyphicon-user "></i>
+                  </blockquote>
+                </blockquote>
+                <hr>
+                <blockquote>
+                  <h1>関与プロジェクト</h1>
+                  <p>
+                    <a href="https://mmflex.codeplex.com/">MikuMikuFlex(MMF)</a><br>
+                    <a href="http://mmw-project.com/">MikuMikuWallpaper(MMW)</a><br>
+                    <a href="https://github.com/LimeStreem/MagicalFPS">Magical-Bullet</a><br>
+                    <a href="https://bitbucket.org/moajo/brakeblock">VRブロック崩し</a><br>
+                    <a href="http://apps.microsoft.com/windows/ja-jp/app/timetableone/ff30f6b7-0886-4c42-b062-1b2da1950a3c">TimeTableOne(Asteroid)</a><br>
+                    <a href="https://github.com/LimeStreem/MagicalFPS">beep(部内起業試行団体)</a><br>
+                     その他ゲーム作成プロジェクト多数
+                  </p>
+                  <blockquote>
+                    <i class="glyphicon glyphicon-wrench "></i>
+                  </blockquote>
+                </blockquote>
+                <hr>
+                <blockquote>
+                  <h1>コンタクト</h1>
+                  <p>
+                     代表: os_ken@ed.kagu.tus.ac.jp
+                  </p>
+                  <blockquote>
+                    <i class="glyphicon glyphicon-envelope "></i>
+                  </blockquote>
+                </blockquote>
+                <hr>
+                <blockquote>
+                  <h1>備考</h1>
+                  <blockquote>
+                    <i class="glyphicon glyphicon-comment "></i>
+                  </blockquote>
+                </blockquote>
+                <hr>
+                <blockquote>
+                  <h1>サークルリンク</h1>
+                  <p>
+                    <a href="http://osk-web.appspot.com/">応用数研究部</a>
+                  </p>
+                  <blockquote>
+                    <i class="glyphicon glyphicon-paperclip "></i>
+                  </blockquote>
+                </blockquote>
+                <hr>
+                <blockquote>
+                  <h1>実績</h1>
+                  <p>
+                    <a href="http://mwccjp.wix.com/mscc-online#!untitled/cglk">MSCC online review 優勝</a><br>
+                     出展各種<br>
+                     (HCD,花楽カフェ、理大祭)
+                  </p>
+                  <blockquote>
+                    <i class="glyphicon glyphicon-stats "></i>
+                  </blockquote>
+                </blockquote>
+                <h1>活動場所</h1>
+                <p>
+                  東京理科大学神楽坂キャンパスの教室
+                </p>
+                <p>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.0900328936!2d139.74139599999998!3d35.69940199999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c5b5bb5cf6b%3A0xd1f5e24e18af51e!2z5p2x5Lqs55CG56eR5aSn5a2mIOelnualveWdguOCreODo-ODs-ODkeOCuQ!5e0!3m2!1sja!2sjp!4v1422829059010" width="600" height="450" frameborder="0" style="border:0">
+                  </iframe>
+                </p>
+              </div>
+              </section>
+              <footer class="footer">
+              <div class="row">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-6">
+                  <div class="footer-content-right">
+                  </div>
+                  <div id="fb-root" class=" fb_reset">
+                    <div class="face_book_plgin_shadow_hidden">
+                    </div>
+                    <section class="face_book_plgin_proposal_1">
+                    <div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/pages/Unitus/308318549371947" data-width="490" data-height="200" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=569860876447312&amp;color_scheme=light&amp;container_width=668&amp;header=false&amp;height=200&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FUnitus%2F308318549371947&amp;locale=ja_JP&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false&amp;width=490">
+                      <span style="vertical-align: bottom; width: 490px; height: 200px;">
+                      <iframe name="ff22b8cc" width="490px" height="200px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like_box Facebook Social Plugin" src="http://www.facebook.com/v2.0/plugins/like_box.php?app_id=569860876447312&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FDU1Ia251o0y.js%3Fversion%3D41%23cb%3Df3d830eb34%26domain%3Dunitus-ac.com%26origin%3Dhttp%253A%252F%252Funitus-ac.com%252Ff2b84464d8%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=668&amp;header=false&amp;height=200&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FUnitus%2F308318549371947&amp;locale=ja_JP&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false&amp;width=490" style="border: none; visibility: visible; width: 490px; height: 200px;" class="">
+                      </iframe>
+                      </span>
+                    </div>
+                    </section>
+                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+                      <div>
+                        <iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://static.ak.facebook.com/connect/xd_arbiter/DU1Ia251o0y.js?version=41#channel=f2b84464d8&amp;origin=http%3A%2F%2Funitus-ac.com" style="border: none;">
+                        </iframe>
+                        <iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://s-static.ak.facebook.com/connect/xd_arbiter/DU1Ia251o0y.js?version=41#channel=f2b84464d8&amp;origin=http%3A%2F%2Funitus-ac.com" style="border: none;">
+                        </iframe>
+                      </div>
+                    </div>
+                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+                      <div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="face_book_plgin_border_top">
+                  </div>
+                  <div class="face_book_plgin_border_right">
+                  </div>
+                  <div class="face_book_plgin_border_bottom">
+                  </div>
+                  <div class="face_book_plgin_border_left">
+                  </div>
+                </div>
+              </div>
+              </footer>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(function(){
+        $("[data-js=markdown]").on("click",function(){
+          markdownPreview($(this).next().val())
+        });
+
+        var markdownPreview = function(plainText){
+          $.ajax({
+            type: "POST",
+            processData: false,
+            url: "https://api.github.com/markdown/raw",
+            dataType: "html",
+            data: plainText,
+            contentType: "text/plain",
+            success: function(data){
+                $("#markdownModal .modal-body h").html(data)
+                generate("success", "通信成功", "markdownが正常に送られました。");
+                $("#markdownModal").modal('show');
+            },
+            error: function(jqXHR, textStatus, error){
+                generate("warning", "サークル追加に失敗しました", "正常にサークルの追加ができませんでした。エラーメッセージ「"+error+"」");
+            }
+          });
+        }
+      });
+    </script>
+<!-- ================================================================================================-->
+
     <!-- 一般ユーザー用 -->
     <script>
       $(function(){
@@ -310,19 +527,22 @@ Template Name: dashboard
 
     <!-- 管理者用ajax -->
     <script>
-      var sendData = {
-          count: 40,
-          offset: 0
-       };
-      $.ajax(
-      {
-          type: "GET",
-          url:"http://unitus-core.azurewebsites.net/Person/Dummy",
-          data: sendData,
-          success:function(msg)
+      $(function(){
+        var i = 0;
+        while(i<1){
+          i++;
+          var sendData = {
+              count: 40,
+              offset: 0
+           };
+          $.ajax(
           {
-              if (msg.Success)
+              type: "GET",
+              url:"http://unitus-core.azurewebsites.net/Person/Dummy",
+              data: sendData,
+              success:function(msg)
               {
+                console.log(msg.Content.Persons.length)
                 generate("success", "サークル追加", "正常にサークルの追加が完了しました。");
                 $.each(msg.Content.Persons, function(){
                   var text =  ''
@@ -353,11 +573,12 @@ Template Name: dashboard
                     generate('error', "キャンセル", $(this).parent().text()+"の削除をとりやめました");
                   }
                 });
-              } else
-              {
-                generate("warning", "サークル追加に失敗しました", "正常にサークルの追加ができませんでした。エラーメッセージ「"+msg.ErrorMessage+"」");
+              },
+              error:function(msg){
+                generate("warning", "サークル追加に失敗しました", "サークルの追加ができませんでした。エラーメッセージ「"+msg+"」");
               }
-          }
+          });
+        }
       });
     </script>
 

@@ -97,6 +97,10 @@ body, html{
     transition: transform 0.5s ease-out;
 }
 #administrator.hidden_panel{
+  -webkit-transform:translateX(-1010px);
+  -moz-transform: translateX(-1010px);
+  -ms-transform: translateX(-1010px);
+  -o-transform: translateX(-1010px);
   transform: translateX(-1010px);
 }
 /*=======================
@@ -273,6 +277,18 @@ section.content h1{
 =============================================*/
 #admin_new_circle h1{
   margin-bottom: 32px;
+}
+#admin_new_circle .label{
+  font-size: 14px;
+  font-weight: normal;
+  background-color: rgba(35, 129, 58, 0.67);
+  padding: 6px 8px;
+  cursor: pointer;
+  vertical-align: top;
+  margin: 0px 23px;
+  display: inline-block;
+  font-weight: normal;
+  cursor: pointer;
 }
 #admin_new_circle label{
   color: #555;
@@ -507,4 +523,176 @@ section.content h1{
   display: block;
   cursor: pointer;
   color: white;
+}
+
+
+/*==========================
+   section circle_preview
+==========================*/
+.modal-dialog{
+  width: 800px;
+}
+
+#circle_single section.section.section--top{
+  background-position: center;
+  background-size: cover;
+  height: 320px;
+  width: 100%;
+  position: relative;
+}
+#circle_single .container{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#circle_single section.section.section--top h1{
+  font-size: 56px;
+  color: white;
+  position: absolute;
+  left: 240px;
+  bottom: 10px;
+  z-index: 5;
+  font-family: serif;
+  margin: 0;
+}
+
+#circle_single section.section.section--postcontent{
+  background-color: whitesmoke;
+}
+#circle_single section div.top__thumbnail{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  bottom: -50px;
+  z-index: 5;
+  border-radius: 4px;
+  border: solid 8px white;
+}
+
+#circle_single section.section.section--postcontent{
+  padding-top: 50px;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+#circle_single section.section.section--postcontent h1{
+  font-size: 32px;
+  border-left: 8px solid #36465d;
+  padding-left: 8px;
+  margin-bottom: 8px;
+}
+#circle_single section.section.section--postcontent p{
+  font-size: 14px;
+  position: relative;
+  padding-left: 16px;
+  width: 100%;
+}
+
+#circle_single section.section.section--postcontent blockquote{
+  vertical-align: top;
+  display: inline-block;
+  background-color: rgba(19, 32, 124, 0.12);
+  border: none;
+  width: 45%;
+  margin: 2%;
+  min-height: 200px;
+  position: relative;
+}
+
+#circle_single section.section.section--postcontent blockquote h1{
+  margin: 8px 0px;
+  font-size: 24px;
+  padding: 0px;
+  border: none;
+  text-align: center;
+  color: rgb(0, 31, 76);
+}
+#circle_single section.section.section--postcontent blockquote h1:after{
+  display: block;
+  margin-top: 2px;
+  content: "";
+  border-top: solid 1px rgb(0, 31, 76);
+  border-bottom: solid 1px rgb(239, 239, 239);
+}
+#circle_single section.section.section--postcontent blockquote p{
+  z-index: 1;
+  padding-bottom: 72px;
+  margin: 0px;
+  left: 0px;
+  word-break: break-word !important;
+}
+#circle_single section.section.section--postcontent blockquote p strong{
+  width: 100%;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 20px;
+}
+#circle_single section.section.section--postcontent blockquote p em{
+  font-size: 56px;
+}
+
+#circle_single section.section.section--postcontent blockquote blockquote{
+  position: absolute;
+  background: none;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  font-size: 40px;
+}
+#circle_single section.section.section--postcontent blockquote blockquote i{
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+#circle_single section.section.section--postcontent blockquote blockquote i:before{
+  position: absolute;
+  font-size: 60px;
+  bottom: 24px;
+  right: 24px;
+  color: rgb(135, 138, 174);
+  z-index: 0;
+}
+
+#circle_single section.section.section--postcontent hr{
+  display: none;
+}
+
+
+@media (max-width: 768px){
+  #circle_single section.section.section--postcontent h1{
+    font-size: 32px;
+  }
+  #circle_single section.section.section--postcontent{
+  padding-top: 0px;
+  }
+  #circle_single section.section.section--postcontent p{
+    left: 0px;
+    font-size: 14px;
+  }
+  iframe{
+    width: 100%;
+    margin: 0 auto;
+  }
+#circle_single section.section.section--postcontent blockquote h1{
+    font-size: 16px;
+  }
+#circle_single section.section.section--postcontent blockquote p {
+    padding-bottom: 72px;
+  }
+#circle_single section.section.section--postcontent blockquote p em{
+    font-size: 48px;
+  }
+#circle_single section.section.section--postcontent blockquote blockquote i:before{
+    font-size: 40px;
+  }
 }

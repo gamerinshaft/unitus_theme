@@ -28,12 +28,5 @@
       </div>
     </div>
     <?php get_footer() ?>
-    <script>
-    $(window).on("load resize", function(){
-          $(".content img").css({
-            width: "100%"
-          });
-        })
-    </script>
   </body>
 </html>

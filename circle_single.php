@@ -11,7 +11,6 @@
       $image_url[0] = empty($image_url[0])?get_bloginfo('stylesheet_directory') . '/img/circle_back.jpg':$image_url[0];
     ?>
     <?php the_post(); ?>
-    <?php get_header() ?>
     <div id="circle_single">
       <section class="section section--top" data-js="sectionTop">
         <div class="smoke"></div>
