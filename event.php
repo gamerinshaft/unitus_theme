@@ -63,9 +63,11 @@ Template Name: event
             $finished_content .=  '<a href="'. get_permalink() .'" class="cell" style="background-image: url(\'' . $image_single_url[0] . '\'); width:'. $w . 'px; height:' . $h . 'px; ">';
             $finished_content .= "<div class='smoke'></div>";
             $finished_content .= "<div class='taglist'>";
-            foreach($tags as $tag):
-              $finished_content .= "<span class='tag'>" . $tag->name . "</span>";
-            endforeach;
+            if(!empty($tags)) :
+              foreach($tags as $tag):
+                $finished_content .= "<span class='tag'>" . $tag->name . "</span>";
+              endforeach;
+            endif;
             $finished_content .=  '</div>';
             $finished_content .=  '<div class="title" href="'. get_permalink() .'">';
             $finished_content .=  get_the_title();
