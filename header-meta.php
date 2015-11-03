@@ -7,5 +7,10 @@
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/setting.css">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/utility.css">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/footer.css">
+  <!-- orestrap -->
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/orestrap/base-layout.css">
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/orestrap/frame.css">
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/orestrap/helper.css">
+  
   <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/bower_components//bootstrap/dist/js/bootstrap.min.js"></script>
