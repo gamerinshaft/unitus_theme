@@ -11,9 +11,55 @@ Template Name: home
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/animation.css">
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/lib/jquery.marquee.js"></script>
   </head>
-  <body id="home">
-    <?php the_post(); ?>
-    <div class="ribon__wrapper">
+  <body>
+    <div class="back">
+      <canvas></canvas>
+    </div>
+    <div id="home">
+      <?php get_header(); ?>
+      <section class="transparent">
+        <div class="col carousel-wrap">
+          <div class="flex flex-xs-auto"></div>
+          <div class="your-class">
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+          </div>
+          <div class="flex flex-xs-auto"></div>
+        </div>
+      </section>
+      <section class="white">
+        <h1 class="title center">実践の場を提供する</h1>
+      </section>
+      <section class="transparent">
+        <div class="row">
+          <div class="flex flex-xs-5">
+            <div class="frame z2">
+              SAP
+            </div>
+          </div>
+          <div class="flex flex-xs-5">
+            <div class="frame z2">
+              SAP
+            </div>
+          </div>
+          <div class="flex flex-xs-5">
+            <div class="frame z2">
+              SAP
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+   <!--  <?php the_post(); ?> -->
+    <!-- <div class="ribon__wrapper">
       <a class="ribon__content" href="<?php bloginfo('url'); ?>/enterprise">
         <span>企業様はこちら</span>
       </a>
@@ -129,9 +175,55 @@ Template Name: home
       <div data-js="object" class="circle circle--pink"></div>
       <div data-js="object" class="circle circle--blue"></div>
       <div data-js="object" class="circle circle--green"></div>
-    </section>
-    <?php get_footer() ?>
+    </section> -->
+    <!-- <?php get_footer() ?> -->
     <script>
+      lowpoly();
+      setInterval(lowpoly,30000)
+      function lowpoly(){
+        var pattern = Trianglify({
+          height: window.innerHeight,
+          width: window.innerWidth,
+          variance: 0+Math.random(),
+          cell_size: 40+Math.random()*100});
+        $(".back canvas")[0].remove();
+        $(".back").prepend(pattern.canvas());
+      }
+    </script>
+    <script>//slick
+      $(function(){
+        $('.your-class').slick({
+          dots: true,
+          arrows: false,
+          centerMode: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          centerPadding: '240px',
+          slidesToShow: 1,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+      });
+    </script>
+    <!-- <script>
       $(function(){
         $(window).on("scroll",function(){
           // if($("[data-js=sectionGroup]").position().top < $(this).scrollTop()){a
@@ -214,6 +306,6 @@ Template Name: home
          }
 
       });
-    </script>
+    </script> -->
   </body>
 </html>

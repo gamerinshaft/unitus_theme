@@ -1,0 +1,19 @@
+#header{
+  position: relative;
+  top: 0px;
+  z-index: 999;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 0px;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.14),0 4px 5px 0 rgba(0,0,0,0.098),0 1px 10px 0 rgba(0,0,0,0.084);
+}
+
+#header h1{
+  font-size: 12px;
+  letter-spacing: 8px;
+  color: #ddd;
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
+}
+
+
